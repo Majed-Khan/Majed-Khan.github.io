@@ -1,0 +1,254 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    --HFS_bg: #151515;
+    --P_heading: #1A2130;
+    --Button_Link_hover: #A91D3A;
+    --S_Text_border: #0A6847;
+    --Section_bg: #A3D8FF;
+    --Cards_bg: #75A47F;
+    --Main_content_bg: #BC6C25;
+    --form_HF_Text_: #BC6C25;
+}
+
+body {
+    min-height: 100vh;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: var(--HFS_bg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    background: radial-gradient(var(--Main_content_bg) 10%, var(--Button_Link_hover) 50%, transparent);
+    border-radius: 50%;
+}
+
+.logo .name {
+    font-size: 1.2em;
+    color: #BC6C25;
+}
+
+.logo .name span {
+    color: #A91D3A;
+    font-size: 1.5em;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.search_box {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    background: white;
+    border: 2px solid #ddd;
+    border-radius: 50px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.search_box input {
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    outline: none;
+}
+
+.search_box input::placeholder {
+    color: #888;
+}
+
+.search_box button {
+    width: 50px;
+    height: 100%;
+    font-size: 1.2em;
+    border: none;
+    background: var(--Main_content_bg);
+    color: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s ease;
+}
+
+.search_box button:hover {
+    background: var(--Button_Link_hover);
+}
+
+.login-button {
+    padding: 10px 20px;
+    font-size: 1em;
+    font-weight: 600;
+    border-radius: 50px;
+    color: #BC6C25;
+    border: 2px solid #BC6C25;
+    cursor: pointer;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+.login-button:hover {
+    border-color: #e25b76;
+    color: #e25b76;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.navbar a {
+    color: #BC6C25;
+    font-weight: 500;
+    font-size: 1.2em;
+    padding: 10px 15px;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #e25b76;
+}
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+}
+
+.popup {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    max-width: 80%;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.popup h2 {
+    margin-bottom: 20px;
+}
+
+.popup form {
+    display: flex;
+    flex-direction: column;
+}
+
+.popup form input {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.popup form button {
+    padding: 10px;
+    border: none;
+    background: var(--Main_content_bg);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.popup form button:hover {
+    background: var(--Button_Link_hover);
+}
+
+.popup p {
+    margin-top: 10px;
+}
+
+.popup p a {
+    color: var(--Main_content_bg);
+    cursor: pointer;
+}
+
+.popup p a:hover {
+    color: var(--Button_Link_hover);
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #333;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    .navigation {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .search_box {
+        width: 100%;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

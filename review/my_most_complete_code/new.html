@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Section with Slider and Sphere</title>
+    <style>
+        /* Hero section */
+        .hero-section {
+            color: #000;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .hero-section .slider {
+            position: relative;
+            top: 110px;
+            left: 5%;
+            width: 50%;
+            height: 70%;
+            overflow: hidden;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            border-radius: 20% 5px;
+            border: 5px solid #faf7f757;
+            box-shadow: #7e22ce8f 0px 22px 70px 4px;
+        }
+
+        .hero-section .slider .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+            height: 100%;
+        }
+
+        .hero-section .slider .slide {
+            position: relative;
+            min-width: 100%;
+            height: 100%;
+            display: flex;
+            background: #000000;
+            align-items: center;
+        }
+
+        .hero-section .slider .slide img {
+            object-fit: cover;
+            width: 40%;
+            height: 100%;
+        }
+
+        .hero-section .slider .slide .myTextBox {
+            height: 100%;
+            width: 60%;
+            background: #000000;
+            color: #fff;
+            margin: 50% 20px;
+            padding: 10px;
+            padding: 20px;
+            border-radius: 10px;
+            align-self: center;
+            overflow: auto;
+        }
+
+        .hero-section .slider .slide .myTextBox h1 {
+            text-align: center;
+            margin-top: 50px;
+            color: #7e22ce;
+        }
+
+        .hero-section .slider .slide .myTextBox p {
+            text-align: justify;
+            margin-top: 20px;
+            line-height: 1.5em;
+            color: #1491eb;
+        }
+
+        .hero-section .slider .navigation {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .hero-section .slider .navigation button {
+            background-color: #e09aee80;
+            border: none;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50px;
+        }
+
+        .hero-section .slider .navigation button:hover {
+            background-color: transparent;
+            color: #e09aee80;
+            border: 1px solid #e09aee80;
+        }
+
+        /* sphere-container */
+        .sphere-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            flex: 1 1 auto;
+            overflow: auto;
+            position: relative;
+            top: 110px;
+            right: 5%;
+            margin-left: 200px;
+            width: 40%;
+            height: 70%;
+            overflow: hidden;
+        }
+
+        .sphere-container .scene {
+            width: 350px;
+            height: 350px;
+            margin: 0 auto;
+            perspective: 1000px;
+        }
+
+        .sphere-container .scene .wrapper {
+            width: 100%;
+            height: 100%;
+            transform: rotateX(45deg) rotateY(45deg);
+            transform-style: preserve-3d;
+        }
+
+        .sphere-container .scene .wrapper .sphere {
+            position: relative;
+            width: 70%;
+            height: 70%;
+            margin: 0 auto;
+            transform-style: preserve-3d;
+            animation: rotate 20s infinite linear;
+        }
+
+        .sphere-container .scene .wrapper .sphere .line {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 1px dotted #06e0fd;
+            box-shadow: 1px 0px 20px -2px #000000,
+                1px 0px 50px -2px #06fdd4;
+        }
+
+        @keyframes rotate {
+            to {
+                transform: rotateX(360deg) rotateY(360deg);
+            }
+        }
+
+        .logoSlider {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            animation: rotateLogoSlider 30s linear infinite;
+        }
+
+        @keyframes rotateLogoSlider {
+            0% {
+                transform: rotateY(0deg);
+            }
+
+            100% {
+                transform: rotateY(360deg);
+            }
+        }
+
+        .logoSlider span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 50px;
+            height: 50px;
+            transform-origin: center;
+            transform-style: preserve-3d;
+            transform: rotateY(calc(var(--i) * 45deg)) translateZ(150px) translateX(-50%) translateY(-50%);
+        }
+
+        .logoSlider span img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="hero-section">
+        <div class="slider">
+            <div class="slides">
+                <div class="slide">
+                    <div class="myTextBox">
+                        <h1>Python</h1>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi provident cumque, tempore
+                            modi in soluta veritatis fugiat sit et omnis similique veniam eos suscipit nihil corrupti
+                            ratione, facilis ea placeat?</p>
+                    </div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOgTjnfGb65qyEJi0enVA0Dix-PEs_utbZ7g&s"
+                        alt="Python">
+                </div>
+                <div class="slide">
+                    <div class="myTextBox">
+                        <h1>Java</h1>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi provident cumque, tempore
+                            modi in soluta veritatis fugiat sit et omnis similique veniam eos suscipit nihil corrupti
+                            ratione, facilis ea placeat?</p>
+                    </div>
+                    <img src="https://media.assettype.com/analyticsinsight%2Fimport%2Fwp-content%2Fuploads%2F2022%2F09%2FJava-19-comes-with-an-open-source-twist-All-you-need-to-know.jpg"
+                        alt="Java">
+                </div>
+                <div class="slide">
+                    <div class="myTextBox">
+                        <h1>Html, Css & JavaScript</h1>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi provident cumque, tempore
+                            modi in soluta veritatis fugiat sit et omnis similique veniam eos suscipit nihil corrupti
+                            ratione, facilis ea placeat?</p>
+                    </div>
+                    <img src="https://img-b.udemycdn.com/course/750x422/3906220_be65_2.jpg" alt="C#">
+                </div>
+            </div>
+            <div class="navigation">
+                <button id="prev">❮</button>
+                <button id="next">❯</button>
+            </div>
+        </div>
+        <div class="sphere-container">
+            <div class="scene">
+                <div class="wrapper">
+                    <div id="sphere" class="sphere"></div>
+                </div>
+            </div>
+            <div class="logoSlider">
+                <span style="--i:0;"><img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKRvIjl_y1tr45q20eFWocQ_rWsGpS0oWs6g&s"
+                        alt="python_logo"></span>
+                <span style="--i:1;"><img
+                        src="https://www.pngitem.com/pimgs/m/538-5380039_logo-java-clipart-png-download-java-circle-icon.png"
+                        alt="java_logo"></span>
+                <span style="--i:2;"><img
+                        src="https://p7.hiclipart.com/preview/929/60/54/net-framework-c-net-core-software-framework-mono-studio-thumbnail.jpg"
+                        alt="C#_logo"></span>
+                <span style="--i:3;"><img
+                        src="https://w7.pngwing.com/pngs/201/90/png-transparent-logo-html-html5.png"
+                        alt="html_logo"></span>
+                <span style="--i:4;"><img
+                        src="https://cdn.pixabay.com/photo/2017/08/05/11/09/css-2589478_640.png"
+                        alt="css_logo"></span>
+                <span style="--i:5;"><img
+                        src="https://seeklogo.com/images/J/javascript-js-logo-2949701702-seeklogo.com.png"
+                        alt="js_logo"></span>
+                <span style="--i:6;"><img
+                        src="https://1000logos.net/wp-content/uploads/2020/09/Microsoft-SQL-Server-Logo.png"
+                        alt="sql_logo"></span>
+                <span style="--i:7;"><img
+                        src="https://icon-library.com/images/github-icon-png/github-icon-png-29.jpg"
+                        alt="github_logo"></span>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Slider code
+        let slideIndex = 1; // Start from the first real slide
+
+        const slides = document.querySelector('.slides');
+        const totalSlides = document.querySelectorAll('.slide').length;
+
+        // Duplicate first and last slide for seamless infinite loop
+        const firstSlide = slides.children[0].cloneNode(true);
+        const lastSlide = slides.children[totalSlides - 1].cloneNode(true);
+        slides.appendChild(firstSlide);
+        slides.insertBefore(lastSlide, slides.children[0]);
+
+        slides.style.transform = `translateX(${-slideIndex * 100}%)`;
+
+        document.getElementById('next').addEventListener('click', () => {
+            moveToNextSlide();
+        });
+
+        document.getElementById('prev').addEventListener('click', () => {
+            moveToPrevSlide();
+        });
+
+        slides.addEventListener('transitionend', () => {
+            if (slideIndex === totalSlides + 1) {
+                slides.style.transition = 'none';
+                slideIndex = 1;
+                slides.style.transform = `translateX(${-slideIndex * 100}%)`;
+            }
+            if (slideIndex === 0) {
+                slides.style.transition = 'none';
+                slideIndex = totalSlides;
+                slides.style.transform = `translateX(${-slideIndex * 100}%)`;
+            }
+        });
+
+        function updateSlidePosition() {
+            slides.style.transition = 'transform 0.5s ease-in-out';
+            slides.style.transform = `translateX(${-slideIndex * 100}%)`;
+        }
+
+        function moveToNextSlide() {
+            if (slideIndex >= totalSlides + 1) return;
+            slideIndex++;
+            updateSlidePosition();
+        }
+
+        function moveToPrevSlide() {
+            if (slideIndex <= 0) return;
+            slideIndex--;
+            updateSlidePosition();
+        }
+
+        function autoPlaySlides() {
+            moveToNextSlide();
+            setTimeout(autoPlaySlides, 3000); // Change slide every 3 seconds
+        }
+
+        autoPlaySlides();
+
+        // Sphere animation code
+        const sphere = document.getElementById('sphere');
+        const rows = [];
+        for (let i = 0; i < 180; i += 9) {
+            rows.push(`<div class="line" style="transform:rotateY(${i}deg);"></div>`);
+        }
+
+        sphere.innerHTML = rows.join('');
+    </script>
+</body>
+
+</html>
