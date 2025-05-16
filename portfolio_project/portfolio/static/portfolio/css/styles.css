@@ -1,0 +1,150 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #121212;
+  color: #ccc;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+a {
+  color: #00aaff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #0077cc;
+}
+
+header {
+  background-color: #1a1a1a;
+  padding: 1rem 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.7);
+}
+
+.navbar .logo {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #00aaff;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.navbar ul li a {
+  font-weight: 600;
+}
+
+main {
+  flex: 1;
+  padding: 2rem 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+footer {
+  background-color: #1a1a1a;
+  text-align: center;
+  padding: 1rem 0;
+  color: #555;
+  font-size: 0.9rem;
+  margin-top: auto;
+}
+
+/* Headings */
+h1, h2, h3 {
+  color: #00aaff;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+/* Section Spacing */
+section {
+  margin-bottom: 3rem;
+}
+
+/* Lists */
+ul.skills-list, ul.project-list {
+  list-style: none;
+  padding-left: 1rem;
+  color: #eee;
+}
+
+ul.skills-list li, ul.project-list li {
+  margin-bottom: 0.5rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(10px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+.contact-form {
+  max-width: 600px;
+  background: #1f1f1f;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #00aaff44;
+  animation: fadeIn 1s ease forwards;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #00aaff;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1.5rem;
+  border: none;
+  border-radius: 5px;
+  background: #333;
+  color: #eee;
+  font-size: 1rem;
+  transition: box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  box-shadow: 0 0 8px #00aaff;
+}
+
+.contact-form button {
+  background: #00aaff;
+  border: none;
+  padding: 0.9rem 2rem;
+  color: #121212;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: #0077cc;
+}
